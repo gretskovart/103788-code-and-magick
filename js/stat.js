@@ -1,29 +1,21 @@
 'use strict';
 
+var renderCloud = function(ctx, x, y, color) {
+  ctx.beginPath();
+  ctx.moveTo(10 + x, 145 + y);
+  ctx.bezierCurveTo(10 + x, 145 + y, 80 + x, 10 + y, 150 + x, 60 + y);
+  ctx.bezierCurveTo(150 + x, 60 + y, 220 + x, 10 + y, 290 + x, 60 + y);
+  ctx.bezierCurveTo(290 + x, 60 + y, 360 + x, 10 + y, 430 + x, 145 + y);
+  ctx.bezierCurveTo(430 + x, 145 + y, 360 + x, 280 + y, 290 + x, 230 + y);
+  ctx.bezierCurveTo(290 + x, 230 + y, 220 + x, 280 + y, 150 + x, 230 + y);
+  ctx.bezierCurveTo(150 + x, 230 + y, 80 + x, 280 + y, 10 + x, 145 + y);
+  ctx.stroke();
+
+  ctx.fillStyle = color;
+  ctx.fill();
+};
+
 window.renderStatistics = function(ctx, names, times) {
-  ctx.beginPath();
-  ctx.moveTo(110, 155);
-  ctx.bezierCurveTo(110, 155, 180, 20, 250, 70);
-  ctx.bezierCurveTo(250, 70, 320, 20, 390, 70);
-  ctx.bezierCurveTo(390, 70, 460, 20, 530, 155);
-  ctx.bezierCurveTo(530, 155, 460, 290, 390, 240);
-  ctx.bezierCurveTo(390, 240, 320, 290, 250, 240);
-  ctx.bezierCurveTo(350, 240, 180, 290, 110, 155);
-  ctx.stroke();
-
-  ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
-  ctx.fill();
-
-  ctx.beginPath();
-  ctx.moveTo(100, 145);
-  ctx.bezierCurveTo(100, 145, 170, 10, 240, 60);
-  ctx.bezierCurveTo(240, 60, 310, 10, 380, 60);
-  ctx.bezierCurveTo(380, 60, 450, 10, 520, 145);
-  ctx.bezierCurveTo(520, 145, 450, 280, 380, 230);
-  ctx.bezierCurveTo(380, 230, 310, 280, 240, 230);
-  ctx.bezierCurveTo(240, 230, 170, 280, 100, 145);
-  ctx.stroke();
-
-  ctx.fillStyle = "#fff";
-  ctx.fill();
+  renderCloud(ctx, 110, 20, 'rgba(0, 0, 0, 0.3)');
+  renderCloud(ctx, 100, 10, '#fff');
 };
