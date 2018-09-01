@@ -2,26 +2,26 @@
 
 window.renderStatistics = function(ctx, names, times) {
   ctx.beginPath();
-  ctx.moveTo(10, 85);
-  ctx.bezierCurveTo(10, 85, 60, 10, 110, 60);
-  ctx.bezierCurveTo(110, 60, 160, 10, 210, 60);
-  ctx.bezierCurveTo(210, 60, 260, 10, 310, 85);
-  ctx.bezierCurveTo(310, 85, 260, 160, 210, 110);
-  ctx.bezierCurveTo(210, 110, 160, 160, 110, 110);
-  ctx.bezierCurveTo(110, 110, 60, 160, 10, 85);
+  ctx.moveTo(10, 145);
+  ctx.bezierCurveTo(10, 145, 80, 10, 150, 60);
+  ctx.bezierCurveTo(150, 60, 220, 10, 290, 60);
+  ctx.bezierCurveTo(290, 60, 360, 10, 430, 145);
+  ctx.bezierCurveTo(430, 145, 360, 280, 290, 230);
+  ctx.bezierCurveTo(290, 230, 220, 280, 150, 230);
+  ctx.bezierCurveTo(150, 230, 80, 280, 10, 145);
   ctx.stroke();
 
   ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
   ctx.fill();
 
   ctx.beginPath();
-  ctx.moveTo(0, 75);
-  ctx.bezierCurveTo(0, 75, 50, 0, 100, 50);
-  ctx.bezierCurveTo(100, 50, 150, 0, 200, 50);
-  ctx.bezierCurveTo(200, 50, 250, 0, 300, 75);
-  ctx.bezierCurveTo(300, 75, 250, 150, 200, 100);
-  ctx.bezierCurveTo(200, 100, 150, 150, 100, 100);
-  ctx.bezierCurveTo(100, 100, 50, 150, 0, 75);
+  ctx.moveTo(0, 135);
+  ctx.bezierCurveTo(0, 135, 70, 0, 140, 50);
+  ctx.bezierCurveTo(140, 50, 210, 0, 280, 50);
+  ctx.bezierCurveTo(280, 50, 350, 0, 420, 135);
+  ctx.bezierCurveTo(420, 135, 350, 270, 280, 220);
+  ctx.bezierCurveTo(280, 220, 210, 270, 140, 220);
+  ctx.bezierCurveTo(140, 220, 70, 270, 0, 135);
   ctx.stroke();
 
   ctx.fillStyle = "#fff";
