@@ -11,5 +11,7 @@ window.renderStatistics = function(ctx, names, times) {
   ctx.bezierCurveTo(100, 100, 50, 150, 0, 75);
   ctx.stroke();
 
+  ctx.fillStyle = "#fff";
+  ctx.fill();
 
 };
