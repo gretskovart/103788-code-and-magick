@@ -2,7 +2,6 @@
 
 var BAR_HEIGHT = 150;
 var BAR_WIDTH = 40;
-var gap = 0;
 var YOUR_COLOR = 'rgba(255, 0, 0, 1)';
 var saturate = Math.ceil(Math.random() * 100) + '%';
 var othersColor = 'hsl(240,' + saturate + ',50%)';
@@ -50,6 +49,8 @@ var getMaxElement = function(arr) {
 };
 
 window.renderStatistics = function(ctx, names, times) {
+  var gap = 0;
+
   renderCloud(ctx, 110, 20, 'rgba(0, 0, 0, 0.3)');
   renderCloud(ctx, 100, 10, '#fff');
 
@@ -64,5 +65,4 @@ window.renderStatistics = function(ctx, names, times) {
 
     gap += 50;
   }
-  gap = 0;
 };
