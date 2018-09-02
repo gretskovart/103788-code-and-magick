@@ -2,7 +2,7 @@
 
 var BAR_HEIGHT = 150;
 var BAR_WIDTH = 40;
-var GAP = 50;
+var gap = 0;
 var YOUR_COLOR = 'rgba(255, 0, 0, 1)';
 var saturate = Math.ceil(Math.random() * 100) + '%';
 var othersColor = 'hsl(240,' + saturate + ',50%)';
@@ -39,7 +39,11 @@ window.renderStatistics = function(ctx, names, times) {
   ctx.fillText('Ура вы победили!', 235, 60);
   ctx.fillText('Список результатов:', 235, 70);
 
-  addScore(ctx, 'Вы', YOUR_COLOR, 250, 245);
-  addScore(ctx, 'Иван', othersColor, 250 + GAP, 245);
-  addScore(ctx, 'Юлия', othersColor, 250 + GAP + GAP, 245);
+  for(var i = 0; i < names.length; i++) {
+    addScore(ctx, names[i], names[i] === 'Вы' ? YOUR_COLOR : othersColor,
+    250 + gap, 245);
+    gap += 50;
+  }
+
+  console.log(names);
 };
