@@ -6,6 +6,7 @@ var YOUR_COLOR = 'rgba(255, 0, 0, 1)';
 var saturate = Math.ceil(Math.random() * 100) + '%';
 var othersColor = 'hsl(240,' + saturate + ',50%)';
 
+// TODO: make a cloud with canvas circles
 var renderCloud = function (ctx, x, y, color) {
   ctx.beginPath();
   ctx.moveTo(10 + x, 145 + y);
@@ -53,7 +54,8 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.fillText('Список результатов:', 235, 70);
 
   for (var i = 0; i < names.length; i++) {
-    addScore(ctx, times, names[i], times[i], names[i] === 'Вы' ? YOUR_COLOR : othersColor, 250 + gap, 245);
+    addScore(ctx, times, names[i], times[i], names[i] === 'Вы' ? YOUR_COLOR :
+    othersColor, 250 + gap, 245);
 
     gap += 50;
   }
