@@ -2,24 +2,15 @@
 
 var BAR_HEIGHT = 150;
 var BAR_WIDTH = 40;
+var CLOUD_WIDTH = 420;
+var CLOUD_HEIGHT = 270;
 var YOUR_COLOR = 'rgba(255, 0, 0, 1)';
 var saturate = Math.ceil(Math.random() * 100) + '%';
 var othersColor = 'hsl(240,' + saturate + ',50%)';
 
-// TODO: make a cloud with canvas circles
 var renderCloud = function (ctx, x, y, color) {
-  ctx.beginPath();
-  ctx.moveTo(10 + x, 145 + y);
-  ctx.bezierCurveTo(10 + x, 145 + y, 80 + x, 10 + y, 150 + x, 60 + y);
-  ctx.bezierCurveTo(150 + x, 60 + y, 220 + x, 10 + y, 290 + x, 60 + y);
-  ctx.bezierCurveTo(290 + x, 60 + y, 360 + x, 10 + y, 430 + x, 145 + y);
-  ctx.bezierCurveTo(430 + x, 145 + y, 360 + x, 280 + y, 290 + x, 230 + y);
-  ctx.bezierCurveTo(290 + x, 230 + y, 220 + x, 280 + y, 150 + x, 230 + y);
-  ctx.bezierCurveTo(150 + x, 230 + y, 80 + x, 280 + y, 10 + x, 145 + y);
-  ctx.stroke();
-
   ctx.fillStyle = color;
-  ctx.fill();
+  ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
 
 var addScore = function (ctx, times, name, time, color, x, y) {
