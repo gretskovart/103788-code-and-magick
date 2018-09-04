@@ -45,8 +45,7 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.fillText('Список результатов:', 235, 70);
 
   for (var i = 0; i < names.length; i++) {
-    addScore(ctx, times, names[i], times[i], names[i] === 'Вы' ? YOUR_COLOR :
-    othersColor, 250 + gap, 245);
+    addScore(ctx, times, names[i], times[i], names[i] === 'Вы' ? YOUR_COLOR : othersColor, 250 + gap, 245);
 
     gap += 50;
   }
