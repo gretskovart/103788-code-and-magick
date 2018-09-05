@@ -33,8 +33,8 @@ var getWizardName = function (mixName) {
   ];
 
   if (mixName) {
-    return getRandomElem(wizardsNames[RANDOM]) + ' '
-    + getRandomElem(wizardsNames[RANDOM]);
+    return getRandomElem(getRandomElem(wizardsNames)) + ' '
+    + getRandomElem(getRandomElem(wizardsNames));
   } else {
     return getRandomElem(wizardsNames[0]) + ' '
     + getRandomElem(wizardsNames[1]);
