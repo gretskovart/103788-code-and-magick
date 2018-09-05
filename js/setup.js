@@ -1,5 +1,7 @@
 'use strict';
 
+var RANDOM = Math.floor(Math.random());
+
 var showSetup = function () {
   var setup = document.querySelector('.setup');
 
@@ -15,7 +17,7 @@ var createWizardsArray = function () {
   for (var i = 0; i < wizardsQuality; i++) {
     wizardsArray[i] = {
       name: getWizardName(true),
-      coatColor: wizardsCoatColor,
+      coatColor: getCoatColor(),
       eyesColor: wizardsEyesColor
     }
   }
@@ -29,17 +31,25 @@ var getWizardName = function (mixName) {
     ], ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая',
       'Нионго', 'Ирвинг']
   ];
-  var random = Math.floor(Math.random());
 
   var getRandomWizardName = function (arr) {
-    return random * arr.length;
+    return RANDOM * arr.length;
   };
 
   if (mixName) {
-    return getRandomWizardName(wizardsNames[random]) + ' '
-    + getRandomWizardName(wizardsNames[random]);
+    return getRandomWizardName(wizardsNames[RANDOM]) + ' '
+    + getRandomWizardName(wizardsNames[RANDOM]);
   } else {
     return getRandomWizardName(wizardsNames[0]) + ' '
     + getRandomWizardName(wizardsNames[1]);
   }
+};
+
+var getCoatColor = function () {
+  var coatColors = [
+    'rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)',
+    'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'
+  ];
+
+  return coatColors[RANDOM];
 };
