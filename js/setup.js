@@ -32,17 +32,17 @@ var getWizardName = function (mixName) {
       'Нионго', 'Ирвинг']
   ];
 
-  var getRandomWizardName = function (arr) {
-    return RANDOM * arr.length;
-  };
-
   if (mixName) {
-    return getRandomWizardName(wizardsNames[RANDOM]) + ' '
-    + getRandomWizardName(wizardsNames[RANDOM]);
+    return getRandomElem(wizardsNames[RANDOM]) + ' '
+    + getRandomElem(wizardsNames[RANDOM]);
   } else {
-    return getRandomWizardName(wizardsNames[0]) + ' '
-    + getRandomWizardName(wizardsNames[1]);
+    return getRandomElem(wizardsNames[0]) + ' '
+    + getRandomElem(wizardsNames[1]);
   }
+};
+
+var getRandomElem = function (arr) {
+  return RANDOM * arr.length;
 };
 
 var getCoatColor = function () {
@@ -51,7 +51,7 @@ var getCoatColor = function () {
     'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'
   ];
 
-  return coatColors[RANDOM];
+  return getRandomElem(coatColors);
 };
 
 var getEyesColor = function () {
@@ -59,5 +59,5 @@ var getEyesColor = function () {
     'black', 'red', 'blue', 'yellow', 'green'
   ];
 
-  return eyesColor[RANDOM];
+  return getRandomElem(eyesColor);
 };
