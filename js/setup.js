@@ -18,8 +18,8 @@ var createWizardsArray = function () {
     wizardsArray[i] = {
       name: getWizardName(true),
       coatColor: getCoatColor(),
-      eyesColor: wizardsEyesColor
-    }
+      eyesColor: getEyesColor()
+    };
   }
 };
 
@@ -52,4 +52,12 @@ var getCoatColor = function () {
   ];
 
   return coatColors[RANDOM];
+};
+
+var getEyesColor = function () {
+  var eyesColor = [
+    'black', 'red', 'blue', 'yellow', 'green'
+  ];
+
+  return eyesColor[RANDOM];
 };
