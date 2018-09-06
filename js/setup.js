@@ -22,8 +22,9 @@ var getWizardName = function (mixName) {
   ];
 
   if (mixName) {
-    return wizardsNames[getRandomElem(getRandomElem(wizardsNames))] + ' '
-    + wizardsNames[getRandomElem(getRandomElem(wizardsNames))];
+    var firstRandomNumber = getRandomElem([0]);
+    return wizardsNames[getRandomElem(wizardsNames[firstRandomNumber])] + ' ' +
+    wizardsNames[getRandomElem(wizardsNames[1 - firstRandomNumber])];
   } else {
     return wizardsNames[getRandomElem(wizardsNames[0])] + ' '
     + wizardsNames[getRandomElem(wizardsNames[1])];
@@ -56,7 +57,7 @@ var createWizardsArray = function (index) {
 
   for (var i = 0; i < WIZARDS_QUANTITY; i++) {
     wizardsArray[i] = {
-      name: getWizardName(false),
+      name: getWizardName(true),
       coatColor: getCoatColor(),
       eyesColor: getEyesColor()
     };
