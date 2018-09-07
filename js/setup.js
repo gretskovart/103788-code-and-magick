@@ -15,10 +15,22 @@ var showSetup = function () {
 var getWizardName = function (mixName) {
   var wizardsNames = [
     [
-      'Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита',
+      'Иван',
+      'Хуан Себастьян',
+      'Мария',
+      'Кристоф',
+      'Виктор',
+      'Юлия',
+      'Люпита',
       'Вашингтон'
-    ], ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая',
-      'Нионго', 'Ирвинг']
+    ], ['да Марья',
+      'Верон',
+      'Мирабелла',
+      'Вальц',
+      'Онопко',
+      'Топольницкая',
+      'Нионго',
+      'Ирвинг']
   ];
 
   if (mixName) {
@@ -32,13 +44,17 @@ var getWizardName = function (mixName) {
 };
 
 var getRandomElem = function (arr) {
-  return Math.round(Math.random() * arr.length);
+  return Math.floor(Math.random() * arr.length);
 };
 
 var getCoatColor = function () {
   var coatColors = [
-    'rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)',
-    'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'
+    'rgb(101, 137, 164)',
+    'rgb(241, 43, 107)',
+    'rgb(146, 100, 161)',
+    'rgb(56, 159, 117)',
+    'rgb(215, 210, 55)',
+    'rgb(0, 0, 0)'
   ];
 
   return coatColors[getRandomElem(coatColors)];
@@ -46,7 +62,11 @@ var getCoatColor = function () {
 
 var getEyesColor = function () {
   var eyesColor = [
-    'black', 'red', 'blue', 'yellow', 'green'
+    'black',
+    'red',
+    'blue',
+    'yellow',
+    'green'
   ];
 
   return eyesColor[getRandomElem(eyesColor)];
