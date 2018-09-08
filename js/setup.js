@@ -33,18 +33,20 @@ var getWizardName = function (mixName) {
       'Ирвинг']
   ];
 
+  var getRandomInteger = function () {
+    return Math.round(Math.random());
+  };
+
   if (mixName) {
-    var firstRandomNumber = getRandomElem([0]);
-    return wizardsNames[getRandomElem(wizardsNames[firstRandomNumber])] + ' ' +
-    wizardsNames[getRandomElem(wizardsNames[1 - firstRandomNumber])];
+    return getRandomElem(wizardsNames[getRandomInteger()]) + ' ' +
+    getRandomElem(wizardsNames[1 - getRandomInteger()]);
   } else {
-    return wizardsNames[getRandomElem(wizardsNames[0])] + ' '
-    + wizardsNames[getRandomElem(wizardsNames[1])];
+    return getRandomElem(wizardsNames[0]) + ' ' + getRandomElem(wizardsNames[1]);
   }
 };
 
 var getRandomElem = function (arr) {
-  return Math.floor(Math.random() * arr.length);
+  return arr[Math.floor(Math.random() * arr.length)];
 };
 
 var getCoatColor = function () {
@@ -57,7 +59,7 @@ var getCoatColor = function () {
     'rgb(0, 0, 0)'
   ];
 
-  return coatColors[getRandomElem(coatColors)];
+  return getRandomElem(coatColors);
 };
 
 var getEyesColor = function () {
@@ -69,7 +71,7 @@ var getEyesColor = function () {
     'green'
   ];
 
-  return eyesColor[getRandomElem(eyesColor)];
+  return getRandomElem(eyesColor);
 };
 
 var createWizardsArray = function (index) {
