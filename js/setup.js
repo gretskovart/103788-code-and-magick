@@ -135,12 +135,14 @@ setupOpen.addEventListener('click', showSetup);
 setupClose.addEventListener('click', hideSetup);
 
 setupOpenIcon.addEventListener('keydown', function (evt) {
+  evt.stopPropogation();
   if (evt.keyCode === 13) {
     showSetup();
   }
 });
 
 setupClose.addEventListener('keydown', function (evt) {
+  evt.stopPropogation();
   if (evt.keyCode === 13) {
     hideSetup();
   }
