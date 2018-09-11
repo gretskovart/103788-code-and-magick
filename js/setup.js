@@ -6,6 +6,8 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
     .content.querySelector('.setup-similar-item');
 var setup = document.querySelector('.setup');
 var setupOpen = document.querySelector('.setup-open');
+var setupOpenIcon = document.querySelector('.setup-open-icon');
+var setupUserName = setup.querySelector('.setup-user-name');
 var setupClose = document.querySelector('.setup-close');
 
 var showSetup = function () {
@@ -124,23 +126,18 @@ addFragmentsToPage();
 showSimilar();
 
 var onPopupEscPress = function (evt) {
-  if (evt.keyCode === 27) {
+  if (evt.keyCode === 27 && evt.target !== setupUserName) {
     hideSetup();
   }
 };
 
-setupOpen.addEventListener('click', function () {
-  showSetup();
-});
+setupOpen.addEventListener('click', showSetup);
+setupClose.addEventListener('click', hideSetup);
 
-setupOpen.addEventListener('keydown', function (evt) {
+setupOpenIcon.addEventListener('keydown', function (evt) {
   if (evt.keyCode === 13) {
     showSetup();
   }
-});
-
-setupClose.addEventListener('click', function () {
-  hideSetup();
 });
 
 setupClose.addEventListener('keydown', function (evt) {
