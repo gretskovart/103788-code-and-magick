@@ -123,6 +123,12 @@ var addFragmentsToPage = function () {
 addFragmentsToPage();
 showSimilar();
 
+var onPopupEscPress = function (evt) {
+  if (evt.keyCode === 27) {
+    hideSetup();
+  }
+};
+
 setupOpen.addEventListener('click', function () {
   showSetup();
 });
@@ -137,8 +143,8 @@ setupClose.addEventListener('click', function () {
   hideSetup();
 });
 
-var onPopupEscPress = function (evt) {
-  if (evt.keyCode === 27) {
+setupClose.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === 13) {
     hideSetup();
   }
-};
+});
