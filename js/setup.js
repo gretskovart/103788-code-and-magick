@@ -4,11 +4,23 @@ var WIZARDS_QUANTITY = 4;
 var similarListElement = document.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template')
     .content.querySelector('.setup-similar-item');
+var setup = document.querySelector('.setup');
+var setupOpen = document.querySelector('.setup-open');
+var setupClose = document.querySelector('.setup-close');
 
 var showSetup = function () {
-  var setup = document.querySelector('.setup');
-
   setup.classList.remove('hidden');
+
+  document.addEventListener('keydown', onPopupEscPress);
+};
+
+var hideSetup = function () {
+  setup.classList.add('hidden');
+
+  document.removeEventListener('keydown', onPopupEscPress);
+};
+
+var showSimilar = function () {
   setup.querySelector('.setup-similar').classList.remove('hidden');
 };
 
@@ -108,5 +120,25 @@ var addFragmentsToPage = function () {
   similarListElement.appendChild(fragment);
 };
 
-showSetup();
 addFragmentsToPage();
+showSimilar();
+
+setupOpen.addEventListener('click', function () {
+  showSetup();
+});
+
+setupOpen.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === 13) {
+    showSetup();
+  }
+});
+
+setupClose.addEventListener('click', function () {
+  hideSetup();
+});
+
+var onPopupEscPress = function (evt) {
+  if (evt.keyCode === 27) {
+    hideSetup();
+  }
+};
