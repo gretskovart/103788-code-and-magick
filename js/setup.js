@@ -90,6 +90,18 @@ var getEyesColor = function () {
   return getRandomElem(eyesColor);
 };
 
+var getFireballColor = function () {
+  var fireballColor = [
+    '#ee4830',
+    '#30a8ee',
+    '#5ce6c0',
+    '#e848d5',
+    '#e6e848'
+  ];
+
+  return getRandomElem(fireballColor);
+};
+
 var createWizardsArray = function (index) {
   var wizardsArray = [];
 
