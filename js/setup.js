@@ -12,6 +12,7 @@ var setupClose = document.querySelector('.setup-close');
 var wizardCoat = document.querySelector('.setup-wizard .wizard-coat');
 var wizardEyes = document.querySelector('.setup-wizard .wizard-eyes');
 var setupFireballWrap = document.querySelector('.setup-fireball-wrap');
+var hideSetupFireballWrap = setupFireballWrap.querySelector('input');
 
 var showSetup = function () {
   setup.classList.remove('hidden');
@@ -175,4 +176,5 @@ wizardEyes.addEventListener('click', function () {
 
 setupFireballWrap.addEventListener('click', function () {
   setupFireballWrap.style.backgroundColor = getFireballColor();
+  hideSetupFireballWrap.setAttribute('value', getFireballColor());
 });
