@@ -9,6 +9,8 @@ var setupOpen = document.querySelector('.setup-open');
 var setupOpenIcon = document.querySelector('.setup-open-icon');
 var setupUserName = setup.querySelector('.setup-user-name');
 var setupClose = document.querySelector('.setup-close');
+var wizardCoat = document.querySelector('.setup-wizard .wizard-coat');
+var wizardEyes = document.querySelector('.setup-wizard .wizard-eyes');
 
 var showSetup = function () {
   setup.classList.remove('hidden');
@@ -148,4 +150,12 @@ setupClose.addEventListener('keydown', function (evt) {
   if (evt.keyCode === 13) {
     hideSetup();
   }
+});
+
+wizardCoat.addEventListener('click', function () {
+  wizardCoat.style.fill = getCoatColor();
+});
+
+wizardEyes.addEventListener('click', function () {
+  wizardEyes.style.fill = getEyesColor();
 });
