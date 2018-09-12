@@ -11,6 +11,7 @@ var setupUserName = setup.querySelector('.setup-user-name');
 var setupClose = document.querySelector('.setup-close');
 var wizardCoat = document.querySelector('.setup-wizard .wizard-coat');
 var wizardEyes = document.querySelector('.setup-wizard .wizard-eyes');
+var setupFireballWrap = document.querySelector('.setup-fireball-wrap');
 
 var showSetup = function () {
   setup.classList.remove('hidden');
@@ -170,4 +171,8 @@ wizardCoat.addEventListener('click', function () {
 
 wizardEyes.addEventListener('click', function () {
   wizardEyes.style.fill = getEyesColor();
+});
+
+setupFireballWrap.addEventListener('click', function () {
+  setupFireballWrap.style.backgroundColor = getFireballColor();
 });
