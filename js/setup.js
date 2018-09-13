@@ -150,17 +150,15 @@ var onPopupEscPress = function (evt) {
 setupOpen.addEventListener('click', showSetup);
 setupClose.addEventListener('click', hideSetup);
 
-// TODO: Разобраться поему не работает #1
 setupOpenIcon.addEventListener('keydown', function (evt) {
-  evt.stopPropogation();
+  evt.stopPropagation();
   if (evt.keyCode === 13) {
     showSetup();
   }
 });
 
-// TODO: Разобраться поему не работает #2
 setupClose.addEventListener('keydown', function (evt) {
-  evt.stopPropogation();
+  evt.stopPropagation();
   if (evt.keyCode === 13) {
     hideSetup();
   }
