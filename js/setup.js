@@ -1,12 +1,14 @@
 'use strict';
 
 var WIZARDS_QUANTITY = 4;
+var ENTER_KEYCODE = 13;
+var ESC_KEYCODE = 27;
+
 var similarListElement = document.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template')
     .content.querySelector('.setup-similar-item');
 var setup = document.querySelector('.setup');
 var setupOpen = document.querySelector('.setup-open');
-var setupOpenIcon = document.querySelector('.setup-open-icon');
 var setupUserName = setup.querySelector('.setup-user-name');
 var setupClose = document.querySelector('.setup-close');
 var wizardCoat = document.querySelector('.setup-wizard .wizard-coat');
@@ -142,7 +144,7 @@ addFragmentsToPage();
 showSimilar();
 
 var onPopupEscPress = function (evt) {
-  if (evt.keyCode === 27 && evt.target !== setupUserName) {
+  if (evt.keyCode === ESC_KEYCODE && evt.target !== setupUserName) {
     hideSetup();
   }
 };
@@ -150,16 +152,16 @@ var onPopupEscPress = function (evt) {
 setupOpen.addEventListener('click', showSetup);
 setupClose.addEventListener('click', hideSetup);
 
-setupOpenIcon.addEventListener('keydown', function (evt) {
-  evt.stopPropagation();
-  if (evt.keyCode === 13) {
+// не работает
+setupOpen.addEventListener('focus', function (evt) {
+  if (evt.keyCode === ENTER_KEYCODE) {
     showSetup();
   }
 });
 
-setupClose.addEventListener('keydown', function (evt) {
-  evt.stopPropagation();
-  if (evt.keyCode === 13) {
+// не работает
+setupClose.addEventListener('focus', function (evt) {
+  if (evt.keyCode === ENTER_KEYCODE) {
     hideSetup();
   }
 });
