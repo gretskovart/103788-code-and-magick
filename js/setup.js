@@ -152,15 +152,13 @@ var onPopupEscPress = function (evt) {
 setupOpen.addEventListener('click', showSetup);
 setupClose.addEventListener('click', hideSetup);
 
-// не работает
-setupOpen.addEventListener('focus', function (evt) {
+setupOpen.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
     showSetup();
   }
 });
 
-// не работает
-setupClose.addEventListener('focus', function (evt) {
+setupClose.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
     hideSetup();
   }
