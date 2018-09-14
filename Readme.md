@@ -1,7 +1,7 @@
 # Учебный проект «Код и Магия» [![Build status][travis-image]][travis-url]
 
 * Студент: [Артём Грецков](https://up.htmlacademy.ru/javascript/15/user/103788).
-* Наставник: `Александр Малинов`.
+* Наставник: [Александр Малинов](https://htmlacademy.ru/profile/id40204).
 
 ---
 
