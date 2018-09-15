@@ -23,7 +23,8 @@
         return window.getRandomElem(wizardsNames[getRandomInteger()]) + ' ' +
         window.getRandomElem(wizardsNames[1 - getRandomInteger()]);
       } else {
-        return window.getRandomElem(wizardsNames[0]) + ' ' + window.getRandomElem(wizardsNames[1]);
+        return window.getRandomElem(wizardsNames[0]) + ' ' +
+        window.getRandomElem(wizardsNames[1]);
       }
     };
 
