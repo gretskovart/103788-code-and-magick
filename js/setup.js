@@ -4,8 +4,9 @@
   var ENTER_KEYCODE = 13;
   var ESC_KEYCODE = 27;
 
-  var setup = document.querySelector('.setup');
-  var setupUserName = setup.querySelector('.setup-user-name');
+  window.setup = document.querySelector('.setup');
+
+  var setupUserName = window.setup.querySelector('.setup-user-name');
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = document.querySelector('.setup-close');
   var wizardCoat = document.querySelector('.setup-wizard .wizard-coat');
@@ -34,13 +35,13 @@
   };
 
   var showSetup = function () {
-    setup.classList.remove('hidden');
+    window.setup.classList.remove('hidden');
 
     document.addEventListener('keydown', onPopupEscPress);
   };
 
   var hideSetup = function () {
-    setup.classList.add('hidden');
+    window.setup.classList.add('hidden');
 
     document.removeEventListener('keydown', onPopupEscPress);
   };
