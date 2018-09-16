@@ -6,15 +6,16 @@
   setupHandle.addEventListener('mousedown', function (evt) {
     evt.preventDefault();
 
-    var dragged = false;
-
     var startCoords = {
       x: evt.clientX,
       y: evt.clientY
     };
 
+    var dragged = false;
+
     var onMouseMove = function (moveEvt) {
       moveEvt.preventDefault();
+      dragged = true;
 
       var shift = {
         x: startCoords.x - moveEvt.clientX,
